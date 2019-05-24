@@ -1,0 +1,28 @@
+<section class="sct-color-1 slice">
+  <div class="container-fluid masonry-container">
+<div class="row">
+<%= render 'users/userInfo', {user: @user, book: @book} %>
+<div class="col-sm-6">
+  <h1>Users</h1>
+  <table class="table table-striped">
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th></th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= attachment_image_tag user, :profile_image, :fill, 60, 60, format:'jpeg', class:"img-circle pull-left profile-img", fallback:"no_image.jpg" %></td>
+      <td><%= user.name %></td>
+      <td><%= link_to "Show", user_path(user), class:"user_#{user.id}" %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+</div>
+  </div>
+</section>
+</div>
+</div>
+</div>
+</section>
